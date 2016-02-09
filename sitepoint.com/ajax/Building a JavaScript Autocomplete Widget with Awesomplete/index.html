@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Form 101 Template</title>
+     <link rel="icon" href="images/favicon.ico">
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/awesomplete.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+<!--    <script src="js/modernizr.js" type="text/javascript"></script>-->
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+         <div class="col-xs-6">
+          <h1>Hello, world!</h1>
+           <form>
+              <div class="form-group">
+                <!--first Example-->
+                <label for="texta">text address</label>
+                <input 
+                    type="text" 
+                    class="form-control awesomplete" 
+                    id="texta" 
+                    data-minchars="1"
+                    data-maxitems="5"
+                    data-list="China, India, Japan, Russia, UK, USA" 
+                    placeholder="text">
+                <!--second Example-->
+                <label for="shortSearchList"> using JavaScript </label>
+                <input name="value search" class="form-control" id="shortSearchList" placeholder="Enter a country">
+              </div>
+<!--              <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputFile">File input</label>
+                <input type="file" id="exampleInputFile">
+                <p class="help-block">Example block-level help text here.</p>
+              </div>-->
+              <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+         </div>
+         <div class="col-xs-6">
+           <h1>Extended JavaScript Properties</h1>
+           <ul>
+               <li>filter</li>
+               <li>sort</li>
+               <li>item</li>
+               <li>replace</li>
+           </ul>
+           <form>
+              <div class="form-group">
+                <label for="filter">filter </label>
+                <input type="text" class="form-control" id="filter" placeholder="filter">
+              </div>
+<!--              <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputFile">File input</label>
+                <input type="file" id="exampleInputFile">
+                <p class="help-block">Example block-level help text here.</p>
+              </div>-->
+              <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+         </div>
+      </div>
+    </div>
+    
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<!--    <script src="js/jquery-1.11.3.js"></script>-->
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/awesomplete.js"></script>
+    <script>
+        var inputFiels = document.getElementById("shortSearchList");
+        var awesompleteCall = new Awesomplete( inputFiels , {
+            minChars: 1,
+            maxItems : 5,
+            atutoFirst : true
+        });
+        awesompleteCall.list = ["China", "India" , "Russia", "Awesomplet", "object","include", "files","needed","plugings","min height", "example"];
+        
+        
+//        Third example
+//Extended JavaScript Properties
+// Filter
+
+function myFilterFunc(text, input) {
+  return text.indexOf(input) > -1;
+  console.log( text.indexOf(input) > -1 );
+}
+var input = document.getElementById( "filter" );
+var listfile = new Awesomplete( input, {
+    filter : myFilterFunc
+});
+listfile.list = ["Property", "controles", "a", "bAngladesh", "..." ," ",1 ,89,true, "value","China", "India", "Japan", "Russia", "UK", "USA"];
+
+    </script>
+  </body>
+</html>

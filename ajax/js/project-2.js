@@ -42,7 +42,7 @@ $(function(){
         $.ajax( this.href, {
               url: "data/project-2.html",
               context: document.body,
-            method: "POST",
+              method: "POST",
             
             success: function(data) {
                 $('#main').html( $(data).find('#main *') );
