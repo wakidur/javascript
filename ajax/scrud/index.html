@@ -7,38 +7,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <!-- <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Oxygen:400,700"> -->
     <link rel="stylesheet" href="css/font-awesome.min.css">
+    <!--<link rel="stylesheet" href="css/datatables.min.css">-->
     <link rel="stylesheet" href="css/layout.css">
-    <script charset="utf-8" src="js/jquery.min.js"></script>
-    <script charset="utf-8" src="js/jquery.dataTables.js"></script>
-    <script charset="utf-8" src="js/jquery.validate.min.js"></script>
-    <script charset="utf-8" src="js/webapp.js"></script>
+    <script charset="utf-8" src="js/modernizr.js"></script>
+   
   </head>
   <body>
 
     <div id="page_container">
 
-      <h1>Largest IT companies by revenue</h1>
+        <h1>Largest IT companies by revenue</h1>
+        <button type="button" class="button" id="add_company">Add company</button>
 
-      <button type="button" class="button" id="add_company">Add company</button>
-
-      <table class="datatable" id="table_companies">
-        <thead>
-          <tr>
-            <th>Rank</th>
-            <th>Company name</th>
-            <th>Industries</th>
-            <th>Revenue</th>
-            <th>Year</th>
-            <th>Employees</th>
-            <th>Market cap</th>
-            <th>Headquarters</th>
-            <th>Functions</th>
-          </tr>
-        </thead>
-        <tbody>
-        </tbody>
-      </table>
-
+        <table class="datatable" id="table_companies">
+            <thead>
+                <tr>
+                    <th>Rank</th>
+                    <th>Company name</th>
+                    <th>Industries</th>
+                    <th>Revenue</th>
+                    <th>Year</th>
+                    <th>Employees</th>
+                    <th>Market cap</th>
+                    <th>Headquarters</th>
+                    <th>Functions</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
     </div>
 
     <div class="lightbox_bg"></div>
@@ -127,5 +123,11 @@
       </div>
     </div>
 
+    
+    <!--JavaScript file links-->
+     <script charset="utf-8" src="js/jquery.min.js"></script>
+    <script charset="utf-8" src="js/jquery.dataTables.js"></script>
+    <script charset="utf-8" src="js/jquery.validate.min.js"></script>
+    <script charset="utf-8" src="js/webapp.js"></script>
   </body>
 </html>
