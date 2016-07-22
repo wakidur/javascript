@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>YOUR TITLE HERE</title>
+<style>
+    /*Example 1: jQuery Selectors and Operations*/
+    .red   { color: #FF0000; }
+    .green { color: #00FF00; }
+    .blue  { color: #0000FF; }
+</style>
+</head>
+<body>
+  <h1>Example 1: jQuery Selectors and Operations</h1>
+  <hr>
+
+
+<!--Example 1: jQuery Selectors and Operations-->
+  <!--<h1 id="hello">Hi!</h1>
+  <p id="message" class="red">First Line </p>
+  <p class="red">Second Line </p>
+  <p class="red">jQuery refers</p>
+  <p class="red">selects the current document </p>
+  <p class="red">HTML document for subsequent </p>
+  <p class="red">Second Line </p>
+  <p>Third Line </p>
+  
+  -->
+  <!--Example 2: jQuery Event Handling-->
+   <h1>Example 2: jQuery Event Handling</h1>
+  <hr>
+  <h1 id="hello">&nbsp;</h1>
+  <p id="message" class="red">First Line </p>
+  <p class="red">Second Line </p>
+  <p>Third Line </p>
+  
+
+<script src="jquery/jquery-3.1.0.js"></script>
+<script>
+    // Run after the Document DOM tree is constructed
+    $( function () { 
+        // Your jQuery scripts here!
+      
+        /*Example 1: jQuery Selectors and Operations*/
+        // select an element that matches the element's unique id
+        //$("#hello").html("hello , world"); // Replace innerHTML
+        //$("#hello").addClass('green');// add css class
+        
+        // select and element that matches the element's "unique id"
+        //$('#message').append("(id matched)");
+        // select element(s) that match "HTML tag name" and process via inplicit loop 
+        //$("p").prepend("(tag name matched)");// add in front
+      // Apply many operation via chaining 
+      //$(".red").before("<p> Before </p>").after("<p> After </p>");
+      
+      
+    // Example 2: jQuery Event Handling
+        //set the context
+        //$("#hello").html('click me!');
+        // bind a onclick handler to a selected element
+        $('#hello').click(function(){
+            $(this).html("Hello, Wakidur Rahman");
+            return false; // prevent triggering the default handler;
+        });
+        
+        // bind onmouseover/ onmouseout handlers to all selected elements
+//        $('p').mousemove(function(){
+//            $(this).addClass('green');
+//        });
+//        $('p').mouseout(function(){
+//            $(this).removeClass('green');
+//        });
+    });
+</script>
+</body>
+</html>

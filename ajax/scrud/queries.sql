@@ -1,3 +1,4 @@
+CREATE DATABASE scrud;
 DROP TABLE IF EXISTS `it_companies`;
 
 CREATE TABLE `it_companies` (
