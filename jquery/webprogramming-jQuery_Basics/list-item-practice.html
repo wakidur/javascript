@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="jquery/jquery-3.1.0.js"></script>
+    </head>
+    <body>
+        <div>List item practice </div>
+        <hr>
+        <h1>Example one</h1>
+        <ul id="name-list">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <script>
+            var item_name = ["Home","About", "Service","Team","Contact"];
+            $("#name-list li").each(function(i){
+                console.log(i + "\n");
+//                $(this).append(item_name);
+                $(this).text(item_name[i])
+            });
+            
+        </script>
+        <hr>
+        <hr>
+        <h1>example two</h1>
+        <div id="parent">
+            <ul id="names-list">
+                <!-- empty list -->
+            </ul>
+        </div>
+        
+        <script>
+            var list = $("#names-list"),
+                parent = list.parent();
+            list.detach().empty().each(function(i){
+                for (var x = 0 ; x < item_name.length ; x++ ) {
+                    $(this).append('<li>' + item_name[x] + '</li>');
+                    if( x == item_name.length - 1 ) {
+                        $(this).appendTo(parent);
+                    }
+                }
+            });
+            
+           
+        </script>
+        <hr>
+        <hr>
+        <ul>
+            <li>
+                <ul>
+                    <li>hello-1</li>
+                    <li>hello-2</li>
+                    <li>hello-3</li>
+                </ul>
+            </li>
+            <li>
+                <ul>
+                    <li>hello-1</li>
+                    <li>hello-2</li>
+                    <li>hello-3</li>
+                </ul>
+            </li>
+
+            <li>
+                <ul>
+                    <li>hello-1</li>
+                    <li>hello-2</li>
+                    <li>hello-3</li>
+                </ul>
+            </li>
+            <li>
+                <ul>
+                    <li>hello-1</li>
+                    <li>hello-2</li>
+                    <li>hello-3</li>
+                </ul>
+            </li>
+        </ul>
+        <script>
+            var a = $("ul li li");
+            var b = $("ul li li:first");
+                b.text("click me").css({'cursor' : 'pointer','font-size': '25px'});
+                b.on('click', function (e) {
+                    a.each(function (index) {
+                        if( index == 1 || index == 4 ){
+                            $(this).css('background-color', 'orange');
+                            console.log(index + "get index")
+                        } else {
+                           console.log("index not found");
+                        }
+                    });
+                      e.preventDefault();
+                });
+               
+    
+        </script>
+    </body>
+</html>

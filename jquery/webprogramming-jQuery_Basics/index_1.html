@@ -34,6 +34,26 @@
   <p class="red">Second Line </p>
   <p>Third Line </p>
   
+  <ul>
+      <li>
+          <ul>
+              <li>hello-1</li>
+              <li>hello-2</li>
+              <li>hello-3</li>
+          </ul>
+      </li>
+      <li>
+          <ul>
+              <li>hello-1</li>
+              <li>hello-2</li>
+              <li>hello-3</li>
+          </ul>
+      </li>
+  </ul>
+  
+  
+  
+  
 
 <script src="jquery/jquery-3.1.0.js"></script>
 <script>
@@ -56,12 +76,12 @@
       
     // Example 2: jQuery Event Handling
         //set the context
-        //$("#hello").html('click me!');
-        // bind a onclick handler to a selected element
-        $('#hello').click(function(){
-            $(this).html("Hello, Wakidur Rahman");
-            return false; // prevent triggering the default handler;
-        });
+//        $("#hello").html('click me!');
+//        // bind a onclick handler to a selected element
+//        $('#hello').click(function(){
+//            $(this).html("Hello, Wakidur Rahman");
+//            return false; // prevent triggering the default handler;
+//        });
         
         // bind onmouseover/ onmouseout handlers to all selected elements
 //        $('p').mousemove(function(){
@@ -70,6 +90,43 @@
 //        $('p').mouseout(function(){
 //            $(this).removeClass('green');
 //        });
+//         var a = $("ul li li");
+//         var b = $("ul li li:first");
+//             b.text("click me");
+//            b.on("click", function(){
+//                a.each(function(index, value){
+//                    if (index[0] == length){
+//                        console.log(index[0]);
+//                        $(this).append("hello")
+//                    }
+//                })
+//            })
+            
+//        var $set = $('ul li li');
+//        var len = $set.length;
+//        $set.each(function(index, element) {
+//              thisVal = $(this).val();
+//              console.log(thisVal + "\n");
+//              var $this = $(this);
+//              console.log($this);
+//              if(parseInt(thisVal) != 0) {
+//                  console.log('Valid Field: '+thisVal);
+//                  if (index == len - 1) {
+//                      console.log('Last field, submit form here');
+//                  }
+//              }
+//        });
+
+ var length = $( 'ul li li' ).length
+    length.each( function( index ) {
+        if(index !== (length -1 ))
+          $( this ).append( 'hello world' );
+        else
+          $( this ).append( ';' );
+
+    } );
+        
+        
     });
 </script>
 </body>

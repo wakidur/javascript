@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="jquery/jquery-3.1.0.js"></script>
+    </head>
+    <body>
+        <div>AJAX Request/Response</div>
+        
+        <h1>Ajax form one </h1>
+        <form id="ajax-submit" method="POST">
+            <label>Enter your message: 
+                <input type="text" id="message" name="message"></label>
+            <br>
+            <input id="submit" type="submit" value="Submit">
+        </form>
+        <p id="message">&nbsp;</p>
+         <script>
+            $(function(){
+                // bind submit button onclick handler to send an Ajax reques and process ajax response.
+                $('#submit:submit').on("click" , function(event){
+                    event.preventDefault();//do not run the default action
+                    var submittedMessage = $(':text[name="message"]').val();
+                    console.log(submittedMessage);
+                    $.ajax({
+                        type: "POST",
+                        url : "ProcessMessage.php",
+                        data : {
+                            message : submittedMessage
+                        }
+                    }).done(function(responseText){
+                       // Triggerd if response status code is  200 
+                        $('#message').html('Your message is ' + responseText);
+                    }).fail(function(jqXHR, status, error){
+                        // Triggerd if response status cone is NOt 200 
+                        console.log(jqXHR.responseText);
+                    }).always(function(){
+                        // Always run after .done() of fail()
+                        $('p:first').after('<p> Thank you.</p>');
+                    })
+                });
+            })
+        </script>
+        <hr>
+        <hr>
+        <h1>Ajax form two</h1>
+
+        
+        
+       
+        
+    </body>
+</html>
