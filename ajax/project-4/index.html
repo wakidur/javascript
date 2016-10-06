@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Submit The Form Without Page Refresh Using Ajax And jQuery.</title>
+    </head>
+    <body>
+        <h1>Submit The Form Without Page Refresh Using Ajax And jQuery.</h1>
+
+        <form>
+            
+            <input type="text" name="full_name" id="full_name" placeholder="name">
+            <input type="email" name="email" id="email" placeholder="email">
+            <input type="number" name="phone_number" id="phone_number" placeholder="phone_number">
+            <input type="text" name="department" id="department" placeholder="department">
+            <input type="text" name="address" id="address" placeholder="address">
+            <button onclick="submitdata()">Submit</button>
+             
+        </form>
+
+        <p id="success_para" ></p>
+        
+        <script type="text/javascript" src="lib/jquery.js"></script>
+        <script type="text/javascript">
+
+            function submitdata()
+            {
+                
+                var full_name = document.getElementById("full_name").value;
+                var email = document.getElementById("email").value;
+                var phone_number = document.getElementById("phone_number").value;
+                var department = document.getElementById("department").value;
+                var address = document.getElementById("address").value;
+                var password = document.getElementById("password").value;
+                
+                console.log( full_name + email + phone_number + department + address + password);
+
+//                $.ajax({
+//                    type: 'post',
+//                    url: 'action.php',
+//                    data: {
+//                        full_name: full_name,
+//                        email: email,
+//                        phone_number : phone_number,
+//                        department : department,
+//                        address : address,
+//                        password : password
+//                        
+//                    },
+//                    success: function (response) {
+//                        $('#success__para').html("You data will be saved");
+//                    }
+//                });
+                console.log("get value");
+                return false;
+            }
+
+        </script>
+
+
+    </body>
+</html>
